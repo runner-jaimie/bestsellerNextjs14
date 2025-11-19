@@ -1,4 +1,4 @@
-.container {
+/* .container {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -29,7 +29,7 @@
 }
 
 .card::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -5px;
   left: -5px;
@@ -52,4 +52,132 @@
 .cardContent {
   position: relative;
   z-index: 1;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.bookCover {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.bookTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bookAuthor {
+  font-size: 14px;
+  color: #666;
+} */
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 제목 크게 */
+.title {
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* 카드 그리드 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ✅ 손그림 느낌 카드 */
+.card {
+  position: relative;
+  padding: 22px 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 16px;
+  font-weight: 700;
+  /* 살짝 떠 있는 느낌 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 손으로 그린 것 같은 테두리 1 */
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 20px;
+  border: 2px solid #333;
+  pointer-events: none;
+}
+
+/* 첫 번째 선: 조금 왼쪽으로 기운 선 */
+.card::before {
+  transform: rotate(-0.8deg);
+  opacity: 0.95;
+}
+
+/* 두 번째 선: 살짝 다른 각도로 한 번 더 그은 느낌 */
+.card::after {
+  inset: -4px;
+  transform: rotate(0.6deg);
+  opacity: 0.7;
+}
+
+/* hover 시 살짝 위로 + 그림자 진하게 */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* 아래는 상세 페이지용 그대로 유지 */
+.section {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.bookCover {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.bookTitle {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.bookAuthor {
+  font-size: 14px;
+  color: #666;
 }
